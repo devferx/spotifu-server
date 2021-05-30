@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 
 const { authRoute } = require("./routes/authRoute");
+const { spotifyRoute } = require("./routes/spotifyRoute");
 
 const config = require("./config");
 
@@ -12,6 +13,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // Routes
 authRoute(app);
+spotifyRoute(app);
 
 app.use(cors());
 app.use(express.json());
